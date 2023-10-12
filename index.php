@@ -42,7 +42,9 @@
                       <td><?php echo $row['jam_masuk'] ?></td>
                       <td><?php echo $row['jam_keluar'] ?></td>
                       <td class="text-center">
-                        <a href="jam-keluar.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">JAM KELUAR</a>
+                        <a href="jam-keluar.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">KELUAR</a>
+                        <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-warning">EDIT</a>
+                        <a href="hapus.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger"> HAPUS</a>
                       </td>
                   </tr>     
                   <?php } ?>
