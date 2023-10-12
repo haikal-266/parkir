@@ -1,9 +1,6 @@
 <?php
     include('koneksi.php');
-
-    $id = $_GET['id']; 
-
-    $query = "SELECT * FROM tbl_parkir WHERE id = '$id' LIMIT 1";
+    $query = "SELECT * FROM tbl_parkir";
     $result = mysqli_query($connection, $query);
     $row = mysqli_fetch_array($result);
 
@@ -29,8 +26,14 @@
             <div class="card-body">
               <form action="update-keluar.php" method="POST">
                 
+              <?php
+
+                    $id = $_GET['id'];
+                  
+              ?>
                 <div class="form-group">
                   <label>JAM KELUAR</label>
+                  <input type="hidden" name="id" value="<?php echo $id ?>">
                   <input type="datetime-local" name="jam_keluar" value="<?php echo $row['jam_keluar'] ?>" class="form-control">
                 </div>
 

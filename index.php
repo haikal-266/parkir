@@ -22,24 +22,21 @@
               <table class="table table-bordered" id="myTable">
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">PLAT NOMER</th>
                     <th scope="col">JENIS KENDARAAN</th>
                     <th scope="col">JAM MASUK</th>
                     <th scope="col">JAM KELUAR</th>
+                    <th scope="col">UPDATE</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                     include('koneksi.php');
-                     $id  = $_POST['id'];
-                      $id = 1;
                       $query = mysqli_query($connection,"SELECT * FROM tbl_parkir");
                       while($row = mysqli_fetch_array($query)){
                   ?>
 
-                  <tr>
-                      <td><?php echo $id++ ?></td>
+                  <tr>      
                       <td><?php echo $row['plat_nomer'] ?></td>
                       <td><?php echo $row['jenis_kendaraan'] ?></td>
                       <td><?php echo $row['jam_masuk'] ?></td>

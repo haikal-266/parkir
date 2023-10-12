@@ -2,11 +2,12 @@
 
     include('koneksi.php');
 
-    $id = $_GET['id'];    
-    $jam_keluar = $_POST['jam_keluar'];
 
-    $query = "UPDATE tbl_parkir SET jam_keluar = '$jam_keluar' where id = 1";
-    
+    $jam_keluar = $_POST['jam_keluar'];
+    $id = $_POST['id'];
+
+    $query = "UPDATE tbl_parkir SET jam_keluar = '$jam_keluar' where id = '$id'";
+
     if ($connection->query($query)) {
         header("location: index.php");
     }
