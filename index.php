@@ -64,7 +64,7 @@
                             <td>TERCATAT SEDANG PARKIR:</td>
                           </tr>
                           <tr>
-                            <td class="font-weight-bold text-center"><?php echo implode(" Kendaraan Sedang Terparkir | Total Kendaraan = ", $ris); ?></td>
+                            <td class="font-weight-bold text-center"><?php echo implode(" Kendaraan Sedang Terparkir | Total Kendaraan Di Parkiran = ", $ris); ?></td>
                           </tr>
                          <?php } ?>
                     </table>
