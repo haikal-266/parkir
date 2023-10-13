@@ -46,12 +46,32 @@
                         <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-warning">EDIT</a>
                         <a href="hapus.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger"> HAPUS</a>
                       </td>
-                  </tr>     
+                  </tr> 
                   <?php } ?>
                 </tbody>
               </table>
+              <hr>
+                <div class="card-header">JUMLAH KENDARAAN TERPAKIR</div>
+                <div class="tabel-jumlah">
+                <?php
+                    include('koneksi.php');
+                      $jmlh = mysqli_query($connection,"SELECT COUNT(jenis_kendaraan) FROM tbl_parkir WHERE jam_keluar='0000-00-00 00:00:00'");
+                      while($ris = mysqli_fetch_array($jmlh)){
+                  ?>
+
+                    <table class="table table-bordered" id="">
+                          <tr class="text-center">
+                            <td>TERCATAT SEDANG PARKIR:</td>
+                          </tr>
+                          <tr>
+                            <td class="font-weight-bold text-center"><?php echo implode(" Kendaraan Sedang Terparkir | Total Kendaraan = ", $ris); ?></td>
+                          </tr>
+                         <?php } ?>
+                    </table>
+                </div>
             </div>
           </div>
+          <br><br>  
       </div>
     </div>
 
