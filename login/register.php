@@ -88,7 +88,9 @@
                     type: 'success',
                     title: 'Register Berhasil!',
                     text: 'silahkan login!'
-                  });
+                  }). then(function(response) {
+                        window.location.href = 'login.php';
+                  }) ;
 
                   $("#username").val('');
                   $("#password").val('');
