@@ -9,6 +9,32 @@
 
   <body>
 
+     <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">PARKINISME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="input.php">Input</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Tampil Data</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navbar End  -->
+
     <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-md-8 offset-md-2">
@@ -17,7 +43,7 @@
              Informasi kendaraan
             </div>
             <div class="card-body">
-              <form action="simpan-input.php" method="POST">
+              <form action="simpan-input.php" method="POST" enctype="multipart/form-data">
                 
                 <div class="form-group">
                   <label>No. Plat Kendaraan</label>
@@ -50,12 +76,12 @@
                   <label>Jam Masuk</label>
                   <input type="datetime-local" name="jam_masuk" class="form-control">
                 </div>
-                
-                <div class="form-group">
-                  <label>Jam Keluar</label>
-                  <input type="datetime-local" name="jam_keluar" class="form-control">
-                </div>
 
+                <div class="form-group">
+                  <label>Upload Gambar Kendaraan</label>
+                  <input type="file" name="gambar" placeholder="Masukkan Nomor Plat" class="form-control">
+                </div>
+                
                 <br>
 
                 <button type="submit" class="btn btn-success">SIMPAN</button>

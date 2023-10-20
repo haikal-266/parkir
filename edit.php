@@ -63,6 +63,12 @@
                     </label>
                 </div>
 
+                <div class="form-group">
+                  <label>Gambar Kendaraan</label>
+                  <input type="hidden" name="id" value="<?php echo $id ?>"></input>
+                  <input type="file" value="<?php echo $row['gambar'] ?>" name="gambar" class="form-control">
+                </div>
+
                 <br>
 
                 <button type="submit" class="btn btn-success">EDIT</button>

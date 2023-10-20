@@ -10,6 +10,32 @@
 
   <body>
 
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">PARKINISME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="input.php">Input</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php">Tampil Data</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navbar End  -->
+
     <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-md-12">
@@ -27,21 +53,25 @@
                     <th scope="col">JENIS KENDARAAN</th>
                     <th scope="col">JAM MASUK</th>
                     <th scope="col">JAM KELUAR</th>
+                    <th scope="col">FOTO</th>
                     <th scope="col">UPDATE</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
                     include('koneksi.php');
+
                       $query = mysqli_query($connection,"SELECT * FROM tbl_parkir");
                       while($row = mysqli_fetch_array($query)){
                   ?>
 
-                  <tr>      
+
+                  <tr class="text-center">      
                       <td><?php echo $row['plat_nomer'] ?></td>
                       <td><?php echo $row['jenis_kendaraan'] ?></td>
                       <td><?php echo $row['jam_masuk'] ?></td>
                       <td><?php echo $row['jam_keluar'] ?></td>
+                      <td><img src="simpen-gambar/<?php echo $row['gambar'] ?>" width="150px" heigth="100px" ></td>
                       <td class="text-center">
                         <a href="jam-keluar.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-primary">KELUAR</a>
                         <a href="edit.php?id=<?php echo $row['id'] ?>" class="btn btn-sm btn-warning">EDIT</a>
